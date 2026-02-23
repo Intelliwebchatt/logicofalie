@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog Post Title | Logic of the Lie</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">🧠 Logic of the Lie</div>
+      <ul class="nav-links">
+        <li><a href="../index.html" >Home</a></li>
+        <li><a href="../index.html#games" onclick="return goToIndexSection('games')">Games</a></li>
+        <li><a href="../index.html#blog" onclick="return goToIndexSection('blog')">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="features" style="padding-top: 7rem; max-width: 900px;">
+    <h1 style="margin-bottom: 0.5rem;">Blog Post Title</h1>
+    <p style="color: var(--dim-text); margin-bottom: 2rem;">
+      Category: <span style="color: var(--primary-color); font-weight: 600;">CATEGORY</span>
+      · <span>Read time: X min</span>
+    </p>
+
+    <article style="color: var(--light-text); font-size: 1.1rem;">
+      <p>Write your blog content here.</p>
+
+      <h2 style="margin-top: 2rem;">Section Header</h2>
+      <p>More content here.</p>
+    </article>
+
+    <div style="margin-top: 3rem;">
+      <a class="btn btn-secondary" href="../index.html#blog" onclick="return goToIndexSection('blog')">← Back to Blog</a>
+    </div>
+  </main>
+
+  <script>
+    // On a blog page we cannot call showSection (it lives in index.html).
+    // This helper forces the browser to go to index.html and then show the right section.
+    function goToIndexSection(sectionId) {
+      window.location.href = "../index.html#" + sectionId;
+      return false;
+    }
+  </script>
+</body>
+</html>
