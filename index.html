@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logic of the Lie - Detect Deception & Read People</title>
+    <link rel="stylesheet" href="style.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">Logic of the Lie</div>
+            <ul class="nav-links">
+                <li><a href="#home" onclick="showSection('home')">Home</a></li>
+                <li><a href="#games" onclick="showSection('games')">Games</a></li>
+                <li><a href="#blog" onclick="showSection('blog')">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <h1>Logic of the <span>Lie</span></h1>
+        <p>Master the art of detecting deception and reading people through interactive games and expert insights. Uncover the truth behind every gesture, word, and micro-expression.</p>
+        <div class="hero-buttons">
+            <a href="#games" onclick="showSection('games')" class="btn btn-primary">Play Games</a>
+            <a href="#blog" onclick="showSection('blog')" class="btn btn-secondary">Read Articles</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="section-title">Why Learn to Detect Deception?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3>Read People Like a Book</h3>
+                <p>Decode body language, facial expressions, and speech patterns to understand what people really mean.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <h3>Spot the Truth</h3>
+                <p>Learn the science behind lie detection and develop your ability to identify deception in everyday situations.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3>Practice & Improve</h3>
+                <p>Hone your skills through interactive games designed by psychology and behavioral analysis experts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="games-section hidden">
+        <h2 class="section-title">Interactive Games</h2>
+        
+        <!-- Game 1: Micro-Expression Quiz -->
+        <div class="game-card" id="game1-card">
+            <div class="game-header">
+                <h3>Micro-Expression Quiz</h3>
+                <p>Test your ability to identify fleeting facial expressions</p>
+            </div>
+            <div class="game-content">
+                <p class="game-description">Can you spot emotions that appear for just 1/25th of a second? This game trains you to recognize micro-expressions - involuntary facial movements that reveal true emotions.</p>
+                <div class="game-stats">
+                    <div class="stat">⏱️ <span class="stat-value">10</span> Questions</div>
+                    <div class="stat">🎯 <span class="stat-value">Medium</span> Difficulty</div>
+                </div>
+                <button class="btn btn-primary" onclick="startGame('microexpressions')">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game 2: Statement Analysis -->
+        <div class="game-card" id="game2-card">
+            <div class="game-header">
+                <h3>Truth or Lie Challenge</h3>
+                <p>Analyze statements and identify deception</p>
+            </div>
+            <div class="game-content">
+                <p class="game-description">Examine statements from various scenarios and determine if they're truthful or deceptive. Learn about linguistic cues, inconsistencies, and patterns that indicate lying.</p>
+                <div class="game-stats">
+                    <div class="stat">⏱️ <span class="stat-value">15</span> Statements</div>
+                    <div class="stat">🎯 <span class="stat-value">Hard</span> Difficulty</div>
+                </div>
+                <button class="btn btn-primary" onclick="startGame('statements')">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game 3: Body Language Reader -->
+        <div class="game-card" id="game3-card">
+            <div class="game-header">
+                <h3>Body Language Detective</h3>
+                <p>Decode gestures and postures</p>
+            </div>
+            <div class="game-content">
+                <p class="game-description">Analyze photos and scenarios to interpret body language signals. From crossed arms to eye contact, master the non-verbal communication skills.</p>
+                <div class="game-stats">
+                    <div class="stat">⏱️ <span class="stat-value">12</span> Scenarios</div>
+                    <div class="stat">🎯 <span class="stat-value">Easy</span> Difficulty</div>
+                </div>
+                <button class="btn btn-primary" onclick="startGame('bodylanguage')">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Active Game Interface -->
+        <div class="game-container hidden" id="active-game">
+            <div class="game-header-bar">
+                <button class="btn btn-secondary" onclick="backToGames()">← Back to Games</button>
+                <div class="score-display">Score: <span id="score">0</span> / <span id="total">0</span></div>
+            </div>
+            <div id="game-interface">
+                <!-- Game content will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog-section hidden">
+        <h2 class="section-title">Deception Detection Blog</h2>
+        
+        <div class="blog-grid">
+            <div class="blog-card">
+                <div class="blog-image">👁️</div>
+                <div class="blog-content">
+                    <div class="blog-category">MICRO-EXPRESSIONS</div>
+                    <h3>The 7 Universal Micro-Expressions</h3>
+                    <p class="blog-excerpt">Discover the seven emotions that all humans express identically, regardless of culture or background...</p>
+                    <div class="blog-footer">
+                        <span>5 min read</span>
+                        <a href="blog-microexpressions.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🗣️</div>
+                <div class="blog-content">
+                    <div class="blog-category">LINGUISTIC ANALYSIS</div>
+                    <h3>Language Patterns of Liars</h3>
+                    <p class="blog-excerpt">Learn how to spot deception through word choice, sentence structure, and speech patterns...</p>
+                    <div class="blog-footer">
+                        <span>7 min read</span>
+                        <a href="blog-linguistic.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🤝</div>
+                <div class="blog-content">
+                    <div class="blog-category">BODY LANGUAGE</div>
+                    <h3>Decoding Hand Gestures</h3>
+                    <p class="blog-excerpt">What do open palms, crossed fingers, and hidden hands really tell us about truthfulness...</p>
+                    <div class="blog-footer">
+                        <span>6 min read</span>
+                        <a href="blog-handgestures.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">🧠</div>
+                <div class="blog-content">
+                    <div class="blog-category">PSYCHOLOGY</div>
+                    <h3>The Psychology of Why We Lie</h3>
+                    <p class="blog-excerpt">Understanding the cognitive and emotional mechanisms behind deception can help us detect it...</p>
+                    <div class="blog-footer">
+                        <span>8 min read</span>
+                        <a href="blog-psychology.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">📊</div>
+                <div class="blog-content">
+                    <div class="blog-category">RESEARCH</div>
+                    <h3>Science vs. Myth in Lie Detection</h3>
+                    <p class="blog-excerpt">Separate fact from fiction in deception detection with evidence-based research and studies...</p>
+                    <div class="blog-footer">
+                        <span>10 min read</span>
+                        <a href="blog-science.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-card">
+                <div class="blog-image">💼</div>
+                <div class="blog-content">
+                    <div class="blog-category">APPLICATION</div>
+                    <h3>Detecting Deception in Business</h3>
+                    <p class="blog-excerpt">Apply deception detection techniques in negotiations, interviews, and professional relationships...</p>
+                    <div class="blog-footer">
+                        <span>7 min read</span>
+                        <a href="blog-business.html" class="read-more">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Logic of the Lie. Master the art of truth detection.</p>
+    </footer>
+
+    <script>
+        // Game Data
+        const games = {
+            microexpressions: {
+                questions: [
+                    {
+                        question: "A person shows a brief, involuntary expression of raised eyebrows and widened eyes lasting only 1/8th of a second. What emotion does this indicate?",
+                        options: ["Fear", "Happiness", "Disgust", "Contempt"],
+                        correct: 0,
+                        explanation: "The 'fear micro-expression' includes raised eyebrows, widened eyes, and stretched lips. It's one of the 7 universal emotions."
+                    },
+                    {
+                        question: "What micro-expression is characterized by one corner of the mouth slightly raised asymmetrically?",
+                        options: ["Happiness", "Contempt", "Surprise", "Sadness"],
+                        correct: 1,
+                        explanation: "Contempt is the only asymmetrical micro-expression, shown by one corner of the mouth raised. It's a powerful indicator of superiority or judgment."
+                    },
+                    {
+                        question: "Which micro-expression involves the lips pressed tightly together and the nose wrinkled?",
+                        options: ["Anger", "Disgust", "Sadness", "Fear"],
+                        correct: 1,
+                        explanation: "Disgust is shown by wrinkled nose and pressed lips. It's a primal reaction to something unpleasant or morally offensive."
+                    },
+                    {
+                        question: "What happens to the eyes during a genuine happiness micro-expression?",
+                        options: ["They widen significantly", "They narrow (Duchenne marker)", "They remain unchanged", "They roll upward"],
+                        correct: 1,
+                        explanation: "Genuine happiness (Duchenne smile) causes the eyes to narrow and 'crow's feet' to appear at the corners. Fake smiles don't engage the eyes."
+                    },
+                    {
+                        question: "A rapid appearance of furrowed eyebrows and pressed lips indicates what emotion?",
+                        options: ["Surprise", "Anger", "Joy", "Boredom"],
+                        correct: 1,
+                        explanation: "Anger micro-expressions include lowered, furrowed eyebrows, pressed lips, and an intense stare. It's one of the most easily recognizable micro-expressions."
+                    }
+                ]
+            },
+            statements: {
+                questions: [
+                    {
+                        question: "Statement: 'I definitely was NOT at the restaurant yesterday at 6 PM. I was at home watching TV.' What's concerning about this statement?",
+                        options: ["Too much detail", "Nothing suspicious", "Use of absolute language", "Too brief"],
+                        correct: 2,
+                        explanation: "Liars often use absolute words like 'definitely,' 'never,' or 'always' to sound more convincing. Truthful people are usually less absolute."
+                    },
+                    {
+                        question: "Statement: 'I would never steal from my employer. I've worked there for 3 years and have always been honest.' What pattern do you notice?",
+                        options: ["Proper chronology", "Adding unnecessary information", "Clear timeline", "Emotional expression"],
+                        correct: 1,
+                        explanation: "Deceptive statements often include unnecessary details and explanations ('I've worked there 3 years,' 'always been honest') to sound more believable."
+                    },
+                    {
+                        question: "When someone answers a question with a question, it typically indicates:",
+                        options: ["Curiosity", "Stalling or deflecting", "Confusion", "Genuine interest"],
+                        correct: 1,
+                        explanation: "Answering a question with another question ('Why do you ask that?') is a common stalling technique used to buy time and avoid direct answers."
+                    },
+                    {
+                        question: "Which of these is a red flag in a statement about an event?",
+                        options: ["Specific details", "Chronological order", "Including unrelated background info", "Emotional words"],
+                        correct: 2,
+                        explanation: "Including unnecessary background information that's not directly relevant to the question is often a sign of deception."
+                    },
+                    {
+                        question: "Statement: 'I don't remember exactly what happened that night. It's all a blur.' What does this lack of memory suggest?",
+                        options: ["They're telling the truth", "They're lying", "Inconclusive without context", "They're confused"],
+                        correct: 2,
+                        explanation: "Memory loss alone isn't proof of deception. Context matters - is the event significant? Recent? Traumatic? Always consider the full situation."
+                    }
+                ]
+            },
+            bodylanguage: {
+                questions: [
+                    {
+                        question: "When someone constantly checks their phone while talking to you, what does it typically indicate?",
+                        options: ["Deep interest", "Disengagement or hiding something", "Nervousness", "Habit only"],
+                        correct: 1,
+                        explanation: "Checking phones frequently shows disengagement or discomfort. It's a barrier behavior that can indicate someone wants to avoid eye contact or true connection."
+                    },
+                    {
+                        question: "What does it mean when someone's feet point toward the exit during a conversation?",
+                        options: ["They're very interested", "They want to leave", "They're relaxed", "They're lying"],
+                        correct: 1,
+                        explanation: "Our feet often reveal our true intentions. Pointing toward the exit indicates a desire to leave, even if the person appears engaged."
+                    },
+                    {
+                        question: "Crossed arms during conversation typically indicate:",
+                        options: ["Openness", "Defensiveness or discomfort", "Relaxation", "Agreement"],
+                        correct: 1,
+                        explanation: "Crossed arms are a closed-off posture suggesting defensiveness, discomfort, or resistance. However, context matters - it could also mean they're cold."
+                    },
+                    {
+                        question: "What does sustained, unbroken eye contact during an interview suggest?",
+                        options: ["Natural confidence", "Possible deception (overcompensating)", "Both are possible", "Neither - it's normal"],
+                        correct: 2,
+                        explanation: "Context is crucial. Too little eye contact can indicate deception, but too much (unnatural staring) can also be a sign someone is trying too hard to appear truthful."
+                    },
+                    {
+                        question: "When someone touches their neck or face while speaking, they might be:",
+                        options: ["Relaxed", "Comfortable", "Anxious or uncomfortable", "Excited"],
+                        correct: 2,
+                        explanation: "Touching the neck, face, or throat are pacifying behaviors - self-soothing actions people perform when experiencing stress, anxiety, or discomfort."
+                    }
+                ]
+            }
+        };
+
+        let currentGame = null;
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let totalQuestions = 0;
+
+        // Show Section Function
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('home').classList.add('hidden');
+            document.getElementById('games').classList.add('hidden');
+            document.getElementById('blog').classList.add('hidden');
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+            
+            // Scroll to top of page
+            window.scrollTo(0, 0);
+        }
+
+        // Start Game Function
+        function startGame(gameType) {
+            currentGame = games[gameType];
+            currentQuestionIndex = 0;
+            score = 0;
+            totalQuestions = currentGame.questions.length;
+            
+            // Hide game cards and show active game
+            document.getElementById('game1-card').classList.add('hidden');
+            document.getElementById('game2-card').classList.add('hidden');
+            document.getElementById('game3-card').classList.add('hidden');
+            document.getElementById('active-game').classList.remove('hidden');
+            
+            // Update score display
+            document.getElementById('score').textContent = score;
+            document.getElementById('total').textContent = totalQuestions;
+            
+            // Load first question
+            loadQuestion();
+        }
+
+        // Load Question Function
+        function loadQuestion() {
+            const question = currentGame.questions[currentQuestionIndex];
+            const gameInterface = document.getElementById('game-interface');
+            
+            let optionsHTML = '';
+            question.options.forEach((option, index) => {
+                optionsHTML += `<button class="option-btn" onclick="checkAnswer(${index}, this)">${option}</button>`;
+            });
+            
+            gameInterface.innerHTML = `
+                <div class="question-area fade-in">
+                    <p class="question-text">Question ${currentQuestionIndex + 1}/${totalQuestions}</p>
+                    <p class="question-text" style="margin-top: 1rem;">${question.question}</p>
+                    <div class="options-grid">
+                        ${optionsHTML}
+                    </div>
+                    <div class="feedback" id="feedback"></div>
+                </div>
+            `;
+        }
+
+        // Check Answer Function
+        function checkAnswer(selectedIndex, button) {
+            const question = currentGame.questions[currentQuestionIndex];
+            const feedback = document.getElementById('feedback');
+            const allButtons = document.querySelectorAll('.option-btn');
+            
+            // Disable all buttons
+            allButtons.forEach(btn => btn.disabled = true);
+            
+            // Show correct/incorrect
+            if (selectedIndex === question.correct) {
+                score++;
+                button.classList.add('correct');
+                feedback.textContent = '✓ Correct! ' + question.explanation;
+                feedback.className = 'feedback correct';
+            } else {
+                button.classList.add('incorrect');
+                allButtons[question.correct].classList.add('correct');
+                feedback.textContent = '✗ Incorrect. ' + question.explanation;
+                feedback.className = 'feedback incorrect';
+            }
+            
+            feedback.style.display = 'block';
+            document.getElementById('score').textContent = score;
+            
+            // Wait then load next question
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < totalQuestions) {
+                    loadQuestion();
+                } else {
+                    showResults();
+                }
+            }, 3000);
+        }
+
+        // Show Results Function
+        function showResults() {
+            const percentage = Math.round((score / totalQuestions) * 100);
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = '🎉 Excellent! You have exceptional deception detection skills!';
+            } else if (percentage >= 60) {
+                message = '👍 Good job! You have solid skills with room for improvement.';
+            } else if (percentage >= 40) {
+                message = '📚 Keep practicing! Deception detection takes time to master.';
+            } else {
+                message = '💪 Don\'t give up! Read our blog posts to learn more techniques.';
+            }
+            
+            document.getElementById('game-interface').innerHTML = `
+                <div class="question-area fade-in">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Game Complete!</h2>
+                    <p style="font-size: 1.5rem; color: var(--accent-red); margin-bottom: 1rem;">
+                        Your Score: ${score}/${totalQuestions} (${percentage}%)
+                    </p>
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">${message}</p>
+                    <button class="btn btn-primary" onclick="startGame('${Object.keys(games).find(key => games[key] === currentGame)}')">Play Again</button>
+                    <button class="btn btn-secondary" onclick="backToGames()" style="margin-left: 1rem;">Back to Games</button>
+                </div>
+            `;
+        }
+
+        // Back to Games Function
+        function backToGames() {
+            document.getElementById('active-game').classList.add('hidden');
+            document.getElementById('game1-card').classList.remove('hidden');
+            document.getElementById('game2-card').classList.remove('hidden');
+            document.getElementById('game3-card').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
