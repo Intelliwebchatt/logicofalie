@@ -11,7 +11,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">🧠 Logic of the Lie</div>
+            <div class="logo">Logic of the Lie</div>
             <ul class="nav-links">
                 <li><a href="#home" onclick="showSection('home')">Home</a></li>
                 <li><a href="#games" onclick="showSection('games')">Games</a></li>
@@ -22,7 +22,7 @@
 
     <!-- Home Section -->
     <section id="home" class="hero">
-        <h1>Logic of the Lie</h1>
+        <h1>Logic of the <span>Lie</span></h1>
         <p>Master the art of detecting deception and reading people through interactive games and expert insights. Uncover the truth behind every gesture, word, and micro-expression.</p>
         <div class="hero-buttons">
             <a href="#games" onclick="showSection('games')" class="btn btn-primary">Play Games</a>
@@ -129,7 +129,7 @@
                     <p class="blog-excerpt">Discover the seven emotions that all humans express identically, regardless of culture or background...</p>
                     <div class="blog-footer">
                         <span>5 min read</span>
-                        <a href="#" class="read-more">Read More →</a>
+                        <a href="blog-microexpressions.html" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@
                     <p class="blog-excerpt">Learn how to spot deception through word choice, sentence structure, and speech patterns...</p>
                     <div class="blog-footer">
                         <span>7 min read</span>
-                        <a href="#" class="read-more">Read More →</a>
+                        <a href="blog-linguistic.html" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -155,7 +155,7 @@
                     <p class="blog-excerpt">What do open palms, crossed fingers, and hidden hands really tell us about truthfulness...</p>
                     <div class="blog-footer">
                         <span>6 min read</span>
-                        <a href="#" class="read-more">Read More →</a>
+                        <a href="blog-handgestures.html" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                     <p class="blog-excerpt">Understanding the cognitive and emotional mechanisms behind deception can help us detect it...</p>
                     <div class="blog-footer">
                         <span>8 min read</span>
-                        <a href="#" class="read-more">Read More →</a>
+                        <a href="blog-psychology.html" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -181,7 +181,7 @@
                     <p class="blog-excerpt">Separate fact from fiction in deception detection with evidence-based research and studies...</p>
                     <div class="blog-footer">
                         <span>10 min read</span>
-                        <a href="#" class="read-more">Read More →</a>
+                        <a href="blog-science.html" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
                     <p class="blog-excerpt">Apply deception detection techniques in negotiations, interviews, and professional relationships...</p>
                     <div class="blog-footer">
                         <span>7 min read</span>
-                        <a href="#" class="read-more">Read More →</a>
+                        <a href="blog-business.html" class="read-more">Read More →</a>
                     </div>
                 </div>
             </div>
@@ -429,7 +429,7 @@
             document.getElementById('game-interface').innerHTML = `
                 <div class="question-area fade-in">
                     <h2 style="font-size: 2rem; margin-bottom: 1rem;">Game Complete!</h2>
-                    <p style="font-size: 1.5rem; color: var(--accent-color); margin-bottom: 1rem;">
+                    <p style="font-size: 1.5rem; color: var(--accent-red); margin-bottom: 1rem;">
                         Your Score: ${score}/${totalQuestions} (${percentage}%)
                     </p>
                     <p style="font-size: 1.2rem; margin-bottom: 2rem;">${message}</p>
